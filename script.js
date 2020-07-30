@@ -1,10 +1,6 @@
 const imageContainer = document.getElementById('image-container');
-// const footerContainer = document.getElementById('footer');
-// const likesContainer = document.getElementById('likes-container');
-// const twitterContainer = document.getElementById('twitter');
-// const viewsContainer = document.getElementById('views');
 
-
+const button = document.getElementById('twitter-btn')
 const loader = document.getElementById('loader');
 
 
@@ -25,6 +21,7 @@ function displayPhotos() {
         item.setAttribute('target', '_blank');
         // Create <img> for photo
         const img = document.createElement('img');
+        img.id = "unsplash-image"
         img.setAttribute('src', photo.urls.regular);
         img.setAttribute('alt', photo.alt_description);
         img.setAttribute('title', photo.alt_description);
@@ -57,6 +54,7 @@ function displayPhotos() {
 
         // Create <p> for number of photo likes
         const numberOfLikes = document.createElement('p');
+        numberOfLikes.id ="num-likes"
         numberOfLikes.innerText = photo.likes
         likes.appendChild(numberOfLikes)
 
@@ -68,9 +66,10 @@ function displayPhotos() {
         footer.appendChild(twitterShare);
 
          // Create <button> for twitter share
-         const twitterButton = document.createElement('button');
+        const twitterButton = document.createElement('button');
          // give heart icon class name
-         twitterButton.className = "twitter-btn";
+        twitterButton.className = "twitter-btn";
+        twitterButton.id ="twitter-btn"
          // Put <i> inside likes container
         twitterShare.appendChild(twitterButton);
         
@@ -79,11 +78,26 @@ function displayPhotos() {
          // give twitter icon class name
          twitterIcon.className = "fab fa-twitter";
          // Put <i> inside likes container
-         twitterButton.appendChild(twitterIcon);
+        twitterButton.appendChild(twitterIcon);
+        
+         // create views div
+         const viewsContainer = document.createElement('div')
+         // give div a class
+         viewsContainer.className = "views-container";
+         // put div inside footer continer
+        footer.appendChild(viewsContainer);
 
+        // Create <i> for views icon
+        const view = document.createElement('i');
+        // give heart icon class name
+        view.className = "fas fa-eye";
+        // Put <i> inside likes container
+        viewsContainer.appendChild(view);
 
-
-       
+        // Create <p> for number of photo views
+        const numberOfViews = document.createElement('p');
+        numberOfViews.innerText = photo.views
+        viewsContainer.appendChild(numberOfViews)
 
     });
 }
@@ -99,6 +113,18 @@ async function getPhotos() {
         // catch error here
     }
 }
+
+
+// Event Delegation
+document.querySelector('body').addEventListener('click', function (e) {
+    const image = document.getElementById('unsplash-image')
+    const selectedImage = image.innerHTML
+    
+    const twitterURL = `https://twitter.com/intent/tweet?url=${selectedImage}`;
+    if (e.target.id === 'twitter-btn') {
+        window.open(twitterURL, '_blank')
+    } 
+})
 
 // on load
 getPhotos();
