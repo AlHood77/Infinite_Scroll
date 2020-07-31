@@ -12,7 +12,7 @@ body {
   font-family: 'Special Elite', cursive, sans-serif;
   background-color: #faf9fb;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23211e25' fill-opacity='0.10'%3E%3Cpath fill-rule='evenodd' d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2l-2 2h-2z'/%3E%3C/g%3E%3C/svg%3E");
-  white-space: nowrap;
+
 }
 
 h1 {
@@ -21,6 +21,10 @@ h1 {
   margin-bottom: 15px;
   font-size: 40px;
   letter-spacing: 4px;
+}
+
+p {
+  color: white;
 }
 
 
@@ -43,8 +47,7 @@ h1 {
 /* image container */
 
 .image-container {
-  margin: 10px 30%;
-
+  margin: 30px 30%;
 }
 
 a {
@@ -54,24 +57,31 @@ a {
 
 .image-container img {
   width: 100%;
-  margin-top: 5px;
+  border: 1px solid black;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .image-footer {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   align-items: center;
-  background: rgba(245, 245, 245, 0.733);
+  background: rgba(2, 22, 40, 0.95);
   margin-bottom: 1rem;
-}
+  width: 100%;
+  border: 1px solid black;
+  border-top: 0.5px solid whitesmoke;
+  border-radius: 0 0 5px 5px;
 
+}
 
 .likes-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
+  padding: 10px;
 }
 
 .views-container {
@@ -79,6 +89,8 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .twitter i {
@@ -91,12 +103,13 @@ a {
   margin-bottom: 5px;
   color: red;
   font-size: 2rem;
+
 }
 
 .views-container i {
   margin-right: 10px;
   margin-bottom: 5px;
-  color: green;
+  color: #F89463;
   font-size: 2rem;
 }
 
@@ -105,17 +118,18 @@ button {
   font-size: 1.2rem;
   height: 2.5rem;
   border: none;
+  padding-bottom: 10px;
   border-radius: 10px;
   color: #fff;
-  background: #333;
+  background: #38a1f3;
   outline: none;
   padding: 0.5rem 1.8rem;
-  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+  box-shadow: 0 0.3rem rgba(199, 199, 199, 0.65);
 }
 
 
 button:hover {
-  filter: brightness(140%)
+  filter: brightness(110%)
 }
 
 button:active {
@@ -124,13 +138,13 @@ button:active {
 }
 
 .twitter-btn:hover {
-  color: #38a1f3
+  color: whitesmoke
 }
 
 
 
 /* media query for large smartphone */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 20px;
   }
