@@ -1,5 +1,4 @@
 const imageContainer = document.getElementById('image-container');
-
 const button = document.getElementById('twitter-btn')
 const loader = document.getElementById('loader');
 
@@ -12,7 +11,6 @@ const apiKey = `h_Pi7YDOzj6t-CSxJHHrpqn3eMNfxbhXnZbigskBr7U`;
 const count = 30;
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
-
 // Check if all images were loaded
 function imageLoaded() {
     imagesLoaded++;
@@ -21,7 +19,6 @@ function imageLoaded() {
         ready = true;
         loader.hidden = true;
     }
-    
 }
 
 // Helper function to Set Attributes on DOM elements
@@ -70,8 +67,6 @@ function displayPhotos() {
         username.innerText = photo.user.username
         header.appendChild(username)
 
-
-
          // Create <img> for profile div
         //  const profileImg = document.createElement('img');
         //  img.id = "profile-img"
@@ -103,8 +98,6 @@ function displayPhotos() {
         // Put <img> inside <a>, then put both inside imageContainer element
         item.appendChild(img);
         imageContainer.appendChild(item);
-
-
 
         // create footer div
         const footer = document.createElement('div')
@@ -175,7 +168,6 @@ function displayPhotos() {
         const numberOfViews = document.createElement('p');
         numberOfViews.innerText = photo.views
         viewsContainer.appendChild(numberOfViews)
-
     });
 }
 
@@ -207,8 +199,6 @@ window.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
         ready = false;
         getPhotos();
-        
-        
     } 
 })
 
