@@ -101,8 +101,8 @@ a {
 .likes-container i {
   margin-right: 10px;
   margin-bottom: 5px;
-  color: red;
-  font-size: 2rem;
+  color: rgb(223, 51, 51);
+  font-size: 1.5rem;
 
 }
 
@@ -110,7 +110,7 @@ a {
   margin-right: 10px;
   margin-bottom: 5px;
   color: #F89463;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 button {
