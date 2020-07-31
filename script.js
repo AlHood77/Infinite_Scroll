@@ -3,7 +3,6 @@ const imageContainer = document.getElementById('image-container');
 const button = document.getElementById('twitter-btn')
 const loader = document.getElementById('loader');
 
-
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
@@ -21,8 +20,6 @@ function imageLoaded() {
     if (imagesLoaded === totalImages) {
         ready = true;
         loader.hidden = true;
-        console.log('ready =', ready);
-        
     }
     
 }
@@ -39,7 +36,6 @@ function setAttributes(element, attributes) {
 function displayPhotos() {
     imagesLoaded = 0;
     totalImages = photosArray.length;
-    console.log('total images', totalImages);
     
     // run function for each object 
     photosArray.forEach((photo) => {
@@ -52,6 +48,42 @@ function displayPhotos() {
             target: '_blank'
         });
 
+        // create header div
+        const header = document.createElement('div')
+        // give div a class
+        header.className = "image-header";
+        header.id = "header"
+        // put div inside image continer
+        imageContainer.appendChild(header);
+
+        // create profile div
+        const profile = document.createElement('div')
+        // give div a class
+        profile.className = "profile-container";
+        profile.id = "likes-container"
+        // put div inside header continer
+        header.appendChild(profile);
+
+        // Create <p> for profile div
+        const username = document.createElement('p');
+        username.id ="username"
+        username.innerText = photo.user.username
+        header.appendChild(username)
+
+
+
+         // Create <img> for profile div
+        //  const profileImg = document.createElement('img');
+        //  img.id = "profile-img"
+        //  // img.setAttribute('src', photo.urls.regular);
+        //  // img.setAttribute('alt', photo.alt_description);
+        //  // img.setAttribute('title', photo.alt_description);
+        //  setAttributes(img, {
+        //      src: photo.user.links.portfolio,
+        //      alt: photo.username,
+        //      title: photo.username
+        //  });
+        // header.appendChild(profileImg)
 
         // Create <img> for photo
         const img = document.createElement('img');
@@ -71,6 +103,8 @@ function displayPhotos() {
         // Put <img> inside <a>, then put both inside imageContainer element
         item.appendChild(img);
         imageContainer.appendChild(item);
+
+
 
         // create footer div
         const footer = document.createElement('div')
@@ -157,7 +191,6 @@ async function getPhotos() {
     }
 }
 
-
 // Event Delegation
 document.querySelector('body').addEventListener('click', function (e) {
     const image = document.getElementById('unsplash-image')
@@ -176,8 +209,7 @@ window.addEventListener('scroll', () => {
         getPhotos();
         
         
-    }
-    
+    } 
 })
 
 // on load

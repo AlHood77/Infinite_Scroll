@@ -59,7 +59,7 @@ a {
   width: 100%;
   border: 1px solid black;
   border-bottom: 0;
-  border-radius: 5px 5px 0 0;
+
 }
 
 .image-footer {
@@ -72,6 +72,19 @@ a {
   border: 1px solid black;
   border-top: 0.5px solid whitesmoke;
   border-radius: 0 0 5px 5px;
+
+}
+
+.image-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(2, 22, 40, 0.95);
+  /* margin-bottom: 1rem; */
+  width: 100%;
+  border: 1px solid black;
+  border-top: 0.5px solid whitesmoke;
+  border-radius: 5px 5px 0 0;
 
 }
 
