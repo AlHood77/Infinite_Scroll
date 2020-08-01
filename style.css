@@ -59,6 +59,8 @@ a {
   border-bottom: 0;
 }
 
+/* image header */
+
 .image-header {
   display: flex;
   justify-content: center;
@@ -71,6 +73,8 @@ a {
   border-radius: 5px 5px 0 0;
   color: whitesmoke;
 }
+
+/* image footer */
 
 .image-footer {
   display: flex;

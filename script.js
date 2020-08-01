@@ -2,12 +2,13 @@ const imageContainer = document.getElementById('image-container');
 const button = document.getElementById('twitter-btn')
 const loader = document.getElementById('loader');
 
+
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 
-const apiKey = `h_Pi7YDOzj6t-CSxJHHrpqn3eMNfxbhXnZbigskBr7U`;
+const apiKey = config.MY_KEY;
 const count = 30;
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
