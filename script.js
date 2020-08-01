@@ -63,8 +63,8 @@ function displayPhotos() {
 
         // Create <p> for profile div
         const username = document.createElement('p');
-        username.id ="username"
-        username.innerText = photo.user.username
+        username.className = "username"
+        username.innerText =' photo by' + ' ' + photo.user.username 
         header.appendChild(username)
 
          // Create <img> for profile div
@@ -124,7 +124,7 @@ function displayPhotos() {
 
         // Create <p> for number of photo likes
         const numberOfLikes = document.createElement('p');
-        numberOfLikes.id ="num-likes"
+        numberOfLikes.className ="num-likes"
         numberOfLikes.innerText = photo.likes
         likes.appendChild(numberOfLikes)
 
@@ -166,6 +166,7 @@ function displayPhotos() {
 
         // Create <p> for number of photo views
         const numberOfViews = document.createElement('p');
+        numberOfViews.className ="num-views"
         numberOfViews.innerText = photo.views
         viewsContainer.appendChild(numberOfViews)
     });

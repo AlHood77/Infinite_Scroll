@@ -20,8 +20,10 @@ h1 {
   letter-spacing: 4px;
 }
 
-p {
-  color: white;
+.headings {
+  text-align: center;
+  color: rgba(2, 22, 40);
+
 }
 
 .loader {
@@ -67,6 +69,7 @@ a {
   border: 1px solid black;
   border-bottom: 0;
   border-radius: 5px 5px 0 0;
+  color: whitesmoke;
 }
 
 .image-footer {
@@ -116,6 +119,12 @@ a {
   margin-bottom: 5px;
   color: #F89463;
   font-size: 1.5rem;
+}
+
+
+.num-views,
+.num-likes {
+  color: whitesmoke;
 }
 
 button {
